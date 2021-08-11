@@ -12,20 +12,18 @@ using TycoonGame.Scripts;
 
 namespace TycoonGame.Forms
 {
-    public partial class GameForm : Form
+    partial class GameForm : Form
     {
-        DataManager dataManager = new DataManager();
-        Tycoon tycoon;
+        public Tycoon gameTycoon;
 
         public GameForm()
         {
-            tycoon = dataManager.Load(2);
             InitializeComponent();
         }
 
         private void GameForm_Load(object sender, EventArgs e)
         {
-            label1.Text = tycoon.GetName();
+            label1.Text = gameTycoon.GetName();
         }
 
         private void label1_Click(object sender, EventArgs e)

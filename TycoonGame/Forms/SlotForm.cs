@@ -12,6 +12,7 @@ namespace TycoonGame.Forms
     {
 
         DataManager dataManager;
+        GameForm gameForm;
         Random random = new Random();
 
         public SlotForm()
@@ -27,6 +28,7 @@ namespace TycoonGame.Forms
         private void Slot1Button_Click(object sender, EventArgs e)
         {
             SelectSlot(1);
+            
         }
 
         private void Slot2Button_Click(object sender, EventArgs e)
@@ -49,6 +51,7 @@ namespace TycoonGame.Forms
                 CreatePlayer(index, "Coder " + random.Next(100000));
             }
             GameForm gameForm = new GameForm();
+            gameForm.gameTycoon = dataManager.Load(index);
             gameForm.Show();
         }
 
@@ -80,7 +83,7 @@ namespace TycoonGame.Forms
         private void CreatePlayer(int index, string name)
         {
             Tycoon newTycoon = new Tycoon(name, new Level(1, 150));
-            dataManager.SaveOrLoad(index, newTycoon);
+            dataManager.Save(index, newTycoon);
         }
     }
 }
