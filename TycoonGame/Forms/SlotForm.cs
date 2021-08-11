@@ -5,6 +5,7 @@ using System.Diagnostics;
 using Newtonsoft.Json;
 using TycoonGame.Scripts;
 using System.IO;
+using System.Drawing;
 
 namespace TycoonGame.Forms
 {
@@ -12,8 +13,10 @@ namespace TycoonGame.Forms
     {
 
         DataManager dataManager;
-        GameForm gameForm;
         Random random = new Random();
+
+        bool mouseDown;
+        Point offset;
 
         public SlotForm()
         {
@@ -52,7 +55,9 @@ namespace TycoonGame.Forms
             }
             GameForm gameForm = new GameForm();
             gameForm.gameTycoon = dataManager.Load(index);
+            gameForm.currentIndex = index;
             gameForm.Show();
+            Application.OpenForms["SlotForm"].Close();
         }
 
         private void ChangeLabels(int index, Label name, Label cash, Label level, Button button)
@@ -83,7 +88,33 @@ namespace TycoonGame.Forms
         private void CreatePlayer(int index, string name)
         {
             Tycoon newTycoon = new Tycoon(name, new Level(1, 150));
-            dataManager.Save(index, newTycoon);
+            dataManager.CreateSave(index, newTycoon);
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.OpenForms["MenuForm"].Close();
+        }
+
+        private void Panel_MouseDown(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mouseDown = true;
+        }
+
+        private void Panel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
+
+        private void Panel_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }

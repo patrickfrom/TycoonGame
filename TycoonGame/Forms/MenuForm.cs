@@ -12,19 +12,10 @@ namespace TycoonGame.Forms
 {
     public partial class MenuForm : Form
     {
-        // Use input to write in code, type "fake" code which you have to write after to earn cash by publshing application.
-        // you can also have "workers" who create applications for you and you earn money from that
-        // When finishing an application, you earn money
+        bool mouseDown;
+        Point offset;
 
-        // Clone Slot Form
-        
-        // Open Tycoon List of Saved Tycoons
-          // Choose Slot
-            // If slot open 
-              // Create
-            // Else
-              // Open saved slot
-   
+        public SlotForm slotForm;
         public MenuForm()
         {
             InitializeComponent();
@@ -36,8 +27,35 @@ namespace TycoonGame.Forms
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            SlotForm slotForm = new SlotForm(); ;
+            slotForm = new SlotForm();
             slotForm.Show();
+            Hide();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void Panel_MouseDown(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mouseDown = true;
+        }
+
+        private void Panel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
+
+        private void Panel_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }

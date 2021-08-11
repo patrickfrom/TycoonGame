@@ -3,7 +3,7 @@
     class Tycoon
     {
         public string name;
-        int coins { get; set; }
+        public int coins;
 
         public Level level;
 

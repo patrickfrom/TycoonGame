@@ -9,7 +9,7 @@ namespace TycoonGame.Scripts
 {
     class DataManager
     {
-        public void Save(int index, Tycoon tycoon) {
+        public void CreateSave(int index, Tycoon tycoon) {
             try
             {
                 using(StreamReader reader = new StreamReader(@"C:\Users\patr9570\Documents\TycoonSaves\save" + index + ".haus"))
@@ -22,6 +22,14 @@ namespace TycoonGame.Scripts
                     file.WriteLine(JsonConvert.SerializeObject(tycoon));
                 }
             } 
+        }
+
+        public void Save(int index, Tycoon tycoon)
+        {
+            using (StreamWriter file = File.CreateText(@"C:\Users\patr9570\Documents\TycoonSaves\save" + index + ".haus"))
+            {
+                file.WriteLine(JsonConvert.SerializeObject(tycoon));
+            }
         }
 
         public Tycoon Load(int index)
