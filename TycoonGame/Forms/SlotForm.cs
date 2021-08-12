@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using TycoonGame.Scripts;
 using System.IO;
 using System.Drawing;
+using TycoonGame.Scripts.Objects;
 
 namespace TycoonGame.Forms
 {
@@ -26,9 +27,9 @@ namespace TycoonGame.Forms
         {
             dataManager = new DataManager();
 
-            ChangeLabels(1, NameLabel1, CashLabel1, LevelLabel1, Slot1Button);
-            ChangeLabels(2, NameLabel2, CashLabel2, LevelLabel2, Slot2Button);
-            ChangeLabels(3, NameLabel3, CashLabel3, LevelLabel3, Slot3Button);
+            ChangeLabels(1, NameLabel1, CashLabel1, Slot1Button);
+            ChangeLabels(2, NameLabel2, CashLabel2, Slot2Button);
+            ChangeLabels(3, NameLabel3, CashLabel3, Slot3Button);
         }
 
         private void Slot1Button_Click(object sender, EventArgs e)
@@ -63,7 +64,7 @@ namespace TycoonGame.Forms
             Application.OpenForms["SlotForm"].Hide();
         }
 
-        private void ChangeLabels(int index, Label name, Label cash, Label level, Button button)
+        private void ChangeLabels(int index, Label name, Label cash, Button button)
         {
             try
             {
@@ -74,7 +75,6 @@ namespace TycoonGame.Forms
 
                     name.Text = "Name: " + tycoon.GetName();
                     cash.Text = "Cash: " + tycoon.GetCoins().ToString();
-                    level.Text = "Level: " + tycoon.level.GetLevel().ToString();
                 }
 
             }
@@ -90,7 +90,7 @@ namespace TycoonGame.Forms
 
         private void CreatePlayer(int index, string name)
         {
-            Tycoon newTycoon = new Tycoon(name, new Level(1, 150));
+            Tycoon newTycoon = new Tycoon(name);
             dataManager.CreateSave(index, newTycoon);
         }
 

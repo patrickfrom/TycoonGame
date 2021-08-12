@@ -37,11 +37,8 @@ namespace TycoonGame.Forms
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.NameLabel1 = new System.Windows.Forms.Label();
             this.CashLabel1 = new System.Windows.Forms.Label();
-            this.LevelLabel1 = new System.Windows.Forms.Label();
-            this.LevelLabel2 = new System.Windows.Forms.Label();
             this.CashLabel2 = new System.Windows.Forms.Label();
             this.NameLabel2 = new System.Windows.Forms.Label();
-            this.LevelLabel3 = new System.Windows.Forms.Label();
             this.CashLabel3 = new System.Windows.Forms.Label();
             this.NameLabel3 = new System.Windows.Forms.Label();
             this.NameInput = new System.Windows.Forms.TextBox();
@@ -131,9 +128,9 @@ namespace TycoonGame.Forms
             this.NameLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.NameLabel1.Location = new System.Drawing.Point(12, 247);
             this.NameLabel1.Name = "NameLabel1";
-            this.NameLabel1.Size = new System.Drawing.Size(87, 21);
+            this.NameLabel1.Size = new System.Drawing.Size(55, 21);
             this.NameLabel1.TabIndex = 6;
-            this.NameLabel1.Text = "Name: N/A";
+            this.NameLabel1.Text = "Name:";
             // 
             // CashLabel1
             // 
@@ -142,31 +139,9 @@ namespace TycoonGame.Forms
             this.CashLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.CashLabel1.Location = new System.Drawing.Point(12, 272);
             this.CashLabel1.Name = "CashLabel1";
-            this.CashLabel1.Size = new System.Drawing.Size(79, 21);
+            this.CashLabel1.Size = new System.Drawing.Size(47, 21);
             this.CashLabel1.TabIndex = 7;
-            this.CashLabel1.Text = "Cash: N/A";
-            // 
-            // LevelLabel1
-            // 
-            this.LevelLabel1.AutoSize = true;
-            this.LevelLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LevelLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.LevelLabel1.Location = new System.Drawing.Point(12, 297);
-            this.LevelLabel1.Name = "LevelLabel1";
-            this.LevelLabel1.Size = new System.Drawing.Size(81, 21);
-            this.LevelLabel1.TabIndex = 8;
-            this.LevelLabel1.Text = "Level: N/A";
-            // 
-            // LevelLabel2
-            // 
-            this.LevelLabel2.AutoSize = true;
-            this.LevelLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LevelLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.LevelLabel2.Location = new System.Drawing.Point(264, 297);
-            this.LevelLabel2.Name = "LevelLabel2";
-            this.LevelLabel2.Size = new System.Drawing.Size(81, 21);
-            this.LevelLabel2.TabIndex = 11;
-            this.LevelLabel2.Text = "Level: N/A";
+            this.CashLabel1.Text = "Cash:";
             // 
             // CashLabel2
             // 
@@ -175,9 +150,9 @@ namespace TycoonGame.Forms
             this.CashLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.CashLabel2.Location = new System.Drawing.Point(264, 272);
             this.CashLabel2.Name = "CashLabel2";
-            this.CashLabel2.Size = new System.Drawing.Size(79, 21);
+            this.CashLabel2.Size = new System.Drawing.Size(47, 21);
             this.CashLabel2.TabIndex = 10;
-            this.CashLabel2.Text = "Cash: N/A";
+            this.CashLabel2.Text = "Cash:";
             // 
             // NameLabel2
             // 
@@ -186,20 +161,9 @@ namespace TycoonGame.Forms
             this.NameLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.NameLabel2.Location = new System.Drawing.Point(264, 247);
             this.NameLabel2.Name = "NameLabel2";
-            this.NameLabel2.Size = new System.Drawing.Size(87, 21);
+            this.NameLabel2.Size = new System.Drawing.Size(55, 21);
             this.NameLabel2.TabIndex = 9;
-            this.NameLabel2.Text = "Name: N/A";
-            // 
-            // LevelLabel3
-            // 
-            this.LevelLabel3.AutoSize = true;
-            this.LevelLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LevelLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.LevelLabel3.Location = new System.Drawing.Point(503, 297);
-            this.LevelLabel3.Name = "LevelLabel3";
-            this.LevelLabel3.Size = new System.Drawing.Size(81, 21);
-            this.LevelLabel3.TabIndex = 14;
-            this.LevelLabel3.Text = "Level: N/A";
+            this.NameLabel2.Text = "Name:";
             // 
             // CashLabel3
             // 
@@ -208,9 +172,9 @@ namespace TycoonGame.Forms
             this.CashLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.CashLabel3.Location = new System.Drawing.Point(503, 272);
             this.CashLabel3.Name = "CashLabel3";
-            this.CashLabel3.Size = new System.Drawing.Size(79, 21);
+            this.CashLabel3.Size = new System.Drawing.Size(47, 21);
             this.CashLabel3.TabIndex = 13;
-            this.CashLabel3.Text = "Cash: N/A";
+            this.CashLabel3.Text = "Cash:";
             // 
             // NameLabel3
             // 
@@ -219,9 +183,9 @@ namespace TycoonGame.Forms
             this.NameLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.NameLabel3.Location = new System.Drawing.Point(503, 247);
             this.NameLabel3.Name = "NameLabel3";
-            this.NameLabel3.Size = new System.Drawing.Size(87, 21);
+            this.NameLabel3.Size = new System.Drawing.Size(55, 21);
             this.NameLabel3.TabIndex = 12;
-            this.NameLabel3.Text = "Name: N/A";
+            this.NameLabel3.Text = "Name:";
             // 
             // NameInput
             // 
@@ -291,13 +255,10 @@ namespace TycoonGame.Forms
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.InputLabel);
             this.Controls.Add(this.NameInput);
-            this.Controls.Add(this.LevelLabel3);
             this.Controls.Add(this.CashLabel3);
             this.Controls.Add(this.NameLabel3);
-            this.Controls.Add(this.LevelLabel2);
             this.Controls.Add(this.CashLabel2);
             this.Controls.Add(this.NameLabel2);
-            this.Controls.Add(this.LevelLabel1);
             this.Controls.Add(this.CashLabel1);
             this.Controls.Add(this.NameLabel1);
             this.Controls.Add(this.pictureBox3);
@@ -329,11 +290,8 @@ namespace TycoonGame.Forms
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label NameLabel1;
         private System.Windows.Forms.Label CashLabel1;
-        private System.Windows.Forms.Label LevelLabel1;
-        private System.Windows.Forms.Label LevelLabel2;
         private System.Windows.Forms.Label CashLabel2;
         private System.Windows.Forms.Label NameLabel2;
-        private System.Windows.Forms.Label LevelLabel3;
         private System.Windows.Forms.Label CashLabel3;
         private System.Windows.Forms.Label NameLabel3;
         private System.Windows.Forms.TextBox NameInput;

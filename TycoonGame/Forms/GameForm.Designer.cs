@@ -33,6 +33,7 @@ namespace TycoonGame.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.ExitButton = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.keyboardImage = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,6 +41,7 @@ namespace TycoonGame.Forms
             // 
             this.GameFormTitle.AutoSize = true;
             this.GameFormTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.GameFormTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.GameFormTitle.Location = new System.Drawing.Point(3, 2);
             this.GameFormTitle.Name = "GameFormTitle";
             this.GameFormTitle.Size = new System.Drawing.Size(76, 30);
@@ -80,16 +82,29 @@ namespace TycoonGame.Forms
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.DoWork);
             this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
             // 
+            // keyboardImage
+            // 
+            this.keyboardImage.BackgroundImage = global::TycoonGame.Properties.Resources.keyboard;
+            this.keyboardImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.keyboardImage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.keyboardImage.Location = new System.Drawing.Point(0, 348);
+            this.keyboardImage.Name = "keyboardImage";
+            this.keyboardImage.Size = new System.Drawing.Size(1310, 385);
+            this.keyboardImage.TabIndex = 7;
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(1310, 733);
+            this.Controls.Add(this.keyboardImage);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GameForm";
             this.Text = "Game";
             this.Load += new System.EventHandler(this.GameForm_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GetKeyUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -102,5 +117,6 @@ namespace TycoonGame.Forms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button ExitButton;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Panel keyboardImage;
     }
 }

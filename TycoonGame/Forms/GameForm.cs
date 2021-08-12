@@ -1,13 +1,11 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using TycoonGame.Scripts;
+using TycoonGame.Scripts.Objects;
 
 namespace TycoonGame.Forms
 {
@@ -23,6 +21,8 @@ namespace TycoonGame.Forms
 
         public GameForm()
         {
+            this.KeyPreview = true;
+
             InitializeComponent();
         }
 
@@ -72,8 +72,23 @@ namespace TycoonGame.Forms
 
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
+            try
+            {
+                foreach (Worker worker in gameTycoon.GetWorkers())
+                {
+                    gameTycoon.AddCoins(worker.GetEarn());
+                    Debug.WriteLine(gameTycoon.GetCoins());
+                }
+            } catch
+            {
+                Debug.WriteLine("No Workers");
+            }
+        }
+
+
+        private void GetKeyUp(object sender, KeyEventArgs e)
+        {
             gameTycoon.AddCoins(1);
-            Debug.WriteLine(gameTycoon.GetCoins());
         }
     }
 }

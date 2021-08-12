@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
+using TycoonGame.Scripts.Objects;
 
 namespace TycoonGame.Scripts
 {

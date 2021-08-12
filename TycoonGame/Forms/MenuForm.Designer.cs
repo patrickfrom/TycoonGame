@@ -32,10 +32,10 @@ namespace TycoonGame.Forms
             this.StartButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.titleImage = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ExitButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.titleImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,14 +85,14 @@ namespace TycoonGame.Forms
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // titleImage
             // 
-            this.pictureBox1.ImageLocation = "C:\\Users\\patr9570\\source\\repos\\TycoonGame\\TycoonGame\\Title.png";
-            this.pictureBox1.Location = new System.Drawing.Point(64, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(673, 114);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.titleImage.ImageLocation = "C:\\Users\\patr9570\\source\\repos\\TycoonGame\\TycoonGame\\Title.png";
+            this.titleImage.Location = new System.Drawing.Point(64, 45);
+            this.titleImage.Name = "titleImage";
+            this.titleImage.Size = new System.Drawing.Size(673, 114);
+            this.titleImage.TabIndex = 3;
+            this.titleImage.TabStop = false;
             // 
             // panel1
             // 
@@ -128,15 +128,14 @@ namespace TycoonGame.Forms
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.titleImage);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.StartButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Menu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.titleImage)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -147,7 +146,7 @@ namespace TycoonGame.Forms
         private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox titleImage;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button ExitButton;
     }
