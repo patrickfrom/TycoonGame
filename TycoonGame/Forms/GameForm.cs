@@ -11,18 +11,20 @@ namespace TycoonGame.Forms
 {
     partial class GameForm : Form
     {
-        private DataManager dataManager = new DataManager();
         public Tycoon gameTycoon;
-
         public int currentIndex;
+
+        private DataManager dataManager = new DataManager();
+        private ShopForm shopForm;
 
         bool mouseDown;
         Point offset;
 
         public GameForm()
         {
+            shopForm = new ShopForm();
             this.KeyPreview = true;
-
+            
             InitializeComponent();
         }
 
@@ -89,6 +91,17 @@ namespace TycoonGame.Forms
         private void GetKeyUp(object sender, KeyEventArgs e)
         {
             gameTycoon.AddCoins(1);
+        }
+
+        private void shopButton_Click(object sender, EventArgs e)
+        {
+            if(shopForm.Visible)
+            {
+                shopForm.Hide();
+            } else 
+            {
+                shopForm.Show();
+            }
         }
     }
 }

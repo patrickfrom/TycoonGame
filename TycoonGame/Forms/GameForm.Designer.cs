@@ -34,6 +34,7 @@ namespace TycoonGame.Forms
             this.ExitButton = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.keyboardImage = new System.Windows.Forms.Panel();
+            this.shopButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,12 +93,28 @@ namespace TycoonGame.Forms
             this.keyboardImage.Size = new System.Drawing.Size(1310, 385);
             this.keyboardImage.TabIndex = 7;
             // 
+            // shopButton
+            // 
+            this.shopButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.shopButton.FlatAppearance.BorderSize = 0;
+            this.shopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shopButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.shopButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.shopButton.Location = new System.Drawing.Point(1196, 43);
+            this.shopButton.Name = "shopButton";
+            this.shopButton.Size = new System.Drawing.Size(106, 44);
+            this.shopButton.TabIndex = 8;
+            this.shopButton.Text = "Shop";
+            this.shopButton.UseVisualStyleBackColor = false;
+            this.shopButton.Click += new System.EventHandler(this.shopButton_Click);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(1310, 733);
+            this.Controls.Add(this.shopButton);
             this.Controls.Add(this.keyboardImage);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -118,5 +135,6 @@ namespace TycoonGame.Forms
         private System.Windows.Forms.Button ExitButton;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Panel keyboardImage;
+        private System.Windows.Forms.Button shopButton;
     }
 }
