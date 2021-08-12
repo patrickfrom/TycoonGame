@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Collections.Generic;
 using System.Diagnostics;
 using Newtonsoft.Json;
 using TycoonGame.Scripts;
@@ -20,8 +19,12 @@ namespace TycoonGame.Forms
 
         public SlotForm()
         {
-            dataManager = new DataManager();
+            
             InitializeComponent();
+        }
+        private void SlotForm_Load(object sender, EventArgs e)
+        {
+            dataManager = new DataManager();
 
             ChangeLabels(1, NameLabel1, CashLabel1, LevelLabel1, Slot1Button);
             ChangeLabels(2, NameLabel2, CashLabel2, LevelLabel2, Slot2Button);
@@ -57,14 +60,14 @@ namespace TycoonGame.Forms
             gameForm.gameTycoon = dataManager.Load(index);
             gameForm.currentIndex = index;
             gameForm.Show();
-            Application.OpenForms["SlotForm"].Close();
+            Application.OpenForms["SlotForm"].Hide();
         }
 
         private void ChangeLabels(int index, Label name, Label cash, Label level, Button button)
         {
             try
             {
-                using (StreamReader reader = new StreamReader(@"C:\Users\patr9570\Documents\TycoonSaves\save" + index + ".haus"))
+                using (StreamReader reader = new StreamReader(dataManager.GetSaveLocation() + @"\save" + index + ".haus"))
                 {
                     Tycoon tycoon = JsonConvert.DeserializeObject<Tycoon>(reader.ReadLine());
                     button.Text = "Load Game";
@@ -116,5 +119,6 @@ namespace TycoonGame.Forms
         {
             mouseDown = false;
         }
+
     }
 }
