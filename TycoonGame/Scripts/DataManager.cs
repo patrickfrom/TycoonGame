@@ -8,7 +8,6 @@ namespace TycoonGame.Scripts
 {
     class DataManager
     {
-
         public void CreateSave(int index, Tycoon tycoon) {
             try
             {
