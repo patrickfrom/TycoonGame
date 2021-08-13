@@ -22,6 +22,7 @@ namespace TycoonGame.Forms
 
         public GameForm()
         {
+            StartPosition = FormStartPosition.CenterScreen;
             shopForm = new ShopForm();
             this.KeyPreview = true;
             
@@ -32,6 +33,8 @@ namespace TycoonGame.Forms
         {
             backgroundWorker1.RunWorkerAsync();
             GameFormTitle.Text = gameTycoon.GetName();
+            moneyLabel.Text = gameTycoon.GetCoins().ToString();
+            shopForm.gameTycoon = gameTycoon;
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -79,7 +82,7 @@ namespace TycoonGame.Forms
                 foreach (Worker worker in gameTycoon.GetWorkers())
                 {
                     gameTycoon.AddCoins(worker.GetEarn());
-                    Debug.WriteLine(gameTycoon.GetCoins());
+                    moneyLabel.Text = gameTycoon.GetCoins().ToString();
                 }
             } catch
             {
@@ -91,6 +94,7 @@ namespace TycoonGame.Forms
         private void GetKeyUp(object sender, KeyEventArgs e)
         {
             gameTycoon.AddCoins(1);
+            moneyLabel.Text = gameTycoon.GetCoins().ToString();
         }
 
         private void shopButton_Click(object sender, EventArgs e)

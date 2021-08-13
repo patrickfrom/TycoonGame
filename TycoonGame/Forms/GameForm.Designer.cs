@@ -35,6 +35,7 @@ namespace TycoonGame.Forms
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.keyboardImage = new System.Windows.Forms.Panel();
             this.shopButton = new System.Windows.Forms.Button();
+            this.moneyLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,12 +109,24 @@ namespace TycoonGame.Forms
             this.shopButton.UseVisualStyleBackColor = false;
             this.shopButton.Click += new System.EventHandler(this.shopButton_Click);
             // 
+            // moneyLabel
+            // 
+            this.moneyLabel.AutoSize = true;
+            this.moneyLabel.Font = new System.Drawing.Font("Segoe UI", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.moneyLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.moneyLabel.Location = new System.Drawing.Point(581, 139);
+            this.moneyLabel.Name = "moneyLabel";
+            this.moneyLabel.Size = new System.Drawing.Size(147, 59);
+            this.moneyLabel.TabIndex = 9;
+            this.moneyLabel.Text = "label1";
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(1310, 733);
+            this.Controls.Add(this.moneyLabel);
             this.Controls.Add(this.shopButton);
             this.Controls.Add(this.keyboardImage);
             this.Controls.Add(this.panel1);
@@ -125,6 +138,7 @@ namespace TycoonGame.Forms
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -136,5 +150,6 @@ namespace TycoonGame.Forms
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Panel keyboardImage;
         private System.Windows.Forms.Button shopButton;
+        private System.Windows.Forms.Label moneyLabel;
     }
 }

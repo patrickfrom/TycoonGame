@@ -20,7 +20,7 @@ namespace TycoonGame.Forms
 
         public SlotForm()
         {
-            
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
         private void SlotForm_Load(object sender, EventArgs e)

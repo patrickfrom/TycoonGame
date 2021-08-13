@@ -15,11 +15,13 @@ namespace TycoonGame.Forms
         public SlotForm slotForm;
         public MenuForm()
         {
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            
         }
 
         private void StartButton_Click(object sender, EventArgs e)

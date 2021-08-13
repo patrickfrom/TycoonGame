@@ -21,6 +21,10 @@ namespace TycoonGame.Scripts.Objects
         {
             coins += amount;
         }
+        public void DecreaseCoins(int amount)
+        {
+            coins -= amount;
+        }
 
     }
 }

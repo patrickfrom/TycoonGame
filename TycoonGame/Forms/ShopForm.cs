@@ -18,33 +18,28 @@ namespace TycoonGame.Forms
 
         public ShopForm()
         {
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
 
-        int i;
         private void ShopForm_Load(object sender, EventArgs e)
         {
-            shopWorkers.Add(new Worker("Jeffry", 250, 1));
-            shopWorkers.Add(new Worker("John", 1000, 3));
+            shopWorkers.Add(new Worker("Jeffrey", 250, 1));
+            shopWorkers.Add(new Worker("John", 1000, 4));
             shopWorkers.Add(new Worker("Rasmus", 3250, 6));
             shopWorkers.Add(new Worker("Noah", 100000, 15));
 
             foreach(Worker worker in shopWorkers)
             {
-                Debug.WriteLine(i);
-                Button newButton = new Button();
+                BuyControl buyControl = new BuyControl();
 
-                newButton.BackColor = ColorTranslator.FromHtml("#27ae60");
-                newButton.ForeColor = Color.White;
+                buyControl.nameLabel.Text = worker.GetName();
+                buyControl.priceLabel.Text = "Price: $" + worker.GetCost();
+                buyControl.earnLabel.Text = "Earn: $" + worker.GetEarn();
 
-                newButton.FlatStyle = FlatStyle.Flat;
+                buyControl.buyButton.Click += Buy_Click;
 
-                newButton.Text = $"{worker.GetName()} \n Cost: {worker.GetCost()} \n Earn: {worker.GetEarn()}";
-                newButton.Click += Buy_Click;
-
-                shopList.Controls.Add(newButton);
-
-                i++;
+                shopList.Controls.Add(buyControl);
             }
         }
 
@@ -76,14 +71,24 @@ namespace TycoonGame.Forms
 
         private void Buy_Click(object sender, EventArgs e)
         {
-            string[] workerString = sender.ToString().Split(" ");
-            foreach(string ss in workerString)
+            Control test = (Control)sender;
+            foreach (Control item in test.Parent.Controls)
             {
                 foreach (Worker worker in shopWorkers)
                 {
-                    if(worker.GetName() == ss)
+                    if(item.Text == worker.GetName()) 
                     {
-                        Debug.WriteLine(worker.GetName());
+                        if(gameTycoon.GetCoins() >= worker.GetCost())
+                        {
+                            gameTycoon.DecreaseCoins(worker.GetCost());
+                            gameTycoon.workers.Add(worker);
+                        } else
+                        {
+                            DisplayForm displayForm = new DisplayForm();
+                            displayForm.Show();
+                            displayForm.TitleLabel.Text = "Not enough money!";
+                            displayForm.BackColor = ColorTranslator.FromHtml("#2c3e50");
+                        }
                     }
                 }
             }
